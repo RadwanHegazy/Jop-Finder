@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> دورلي </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+
+    <div class="container">
+
+        <div class="left">
+            <img src="{% static 'images/likedin.png' %}" alt="">
+            <img src="{% static 'images/share.png' %}" alt="">
+        </div>
+        
+        <div class="center">
+            <h1>موقع دورلي </h1>
+            <p>البحث في اكثر من موقع من مواقع العمل الحر</p>
+            <div class="in">
+                <form method="POST" action="{% url 'jops' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="fas fa-search"></button>
+                    <input name="keyword" type="text" placeholder="ابحث هنا">
+                </form>
+            </div>
+        </div>
+        
+        <div class="right">
+            <img src="{% static 'images/search.png' %}" alt="">
+            <img src="{% static 'images/file.png' %}" alt="">
+
+        </div>
+
+    </div>
+
+
+    
+    <footer>
+        <p>تم الانشاء و التطوير بواسطة : <a href="https://www.facebook.com/radwan.gaber.hijazi/" target="_blank">رضوان جابر حجازي</a></p>
+    </footer>
+
+    
+</body>
+</html>

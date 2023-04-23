@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+
+:root{
+    --var-font:'Cairo',sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 8fr 1fr;
+    background-color:#0A4D68;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--var-font);
+    background-color: #093E53;
+    box-shadow: 0px 3px 21px #25D7F222;
+    color: #26B4C9;
+    font-weight: bold;
+}
+
+footer a {
+    color: #45dcf3;
+    text-shadow: 0px 4px 25px #45dcf390;
+    text-decoration: none;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1.5fr 4fr 1.5fr;
+}
+
+.container div {
+    position: relative;
+}
+
+
+.container img {
+    filter: drop-shadow(0px 3px 21px #25D7F250);
+}
+
+.container .left, .container .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 2rem;
+}
+
+.container img:first-child{
+    animation: imageAnime 2s alternate infinite;
+}
+.container img:nth-child(2){
+    animation: imageAnime 2.7s alternate infinite;
+
+}
+.container img:nth-child(3){
+    animation: imageAnime 2.3s alternate infinite;
+}
+.container img:last-child{
+    animation: imageAnime 2.5s alternate infinite;
+}
+
+
+@keyframes imageAnime {
+    from {
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(25px);
+    }
+}
+
+
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 5rem;
+    align-items: center;
+    gap: 30px;
+    font-family: var(--var-font);
+}
+
+.center h1 {
+    color: #25D7F2 ;
+    text-shadow: 0px 3px 21px #25D7F248;
+    font-size: 3.5rem;
+
+}
+
+
+.center p {
+    font-size: 1.5rem;
+    color: #26B4C9;
+}
+
+
+.in {
+    width: 500px;
+    background-color: #FFFFFF20;
+    display: flex;
+    padding: 1.2rem 2rem;
+    border-radius: 30px;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.in button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    background-color: #093E53;
+    font-size: 20px;
+}
+
+.in input {
+    width: 390px;
+    direction: rtl;
+    font-family: var(--var-font);
+    background-color: transparent;
+    border: none;
+    color: #25D7F2;
+    outline: none;
+    font-size: 18px;
+    text-shadow: 0px 3px 10px #25D7F250;
+}
+
+.in input::placeholder{
+    color: #999;
+}
+
+
+
+@media (max-width:600px) {
+    
+    .container .left,.container .right {
+        display: none;
+    }
+
+    .container {
+        display: block;
+        padding: 1rem;
+    }
+    .container .center{
+        width: 100%;
+    }
+
+}
